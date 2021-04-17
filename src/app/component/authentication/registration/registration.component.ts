@@ -14,7 +14,10 @@ export class RegistrationComponent implements OnInit {
   hide = false;
   registerForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.pattern(/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/i)]],
-    mobile: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(/^\d+$/)]],
+    mobile: [
+      '',
+      [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^\d+$/)],
+    ],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });

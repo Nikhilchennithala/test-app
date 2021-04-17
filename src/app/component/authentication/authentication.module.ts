@@ -11,9 +11,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { RegistrationComponent } from './registration/registration.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NewPasswordComponent } from './_dialogues/new-password/new-password.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [LoginComponent, RegistrationComponent],
+  declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, NewPasswordComponent],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
@@ -25,6 +28,7 @@ import { RegistrationComponent } from './registration/registration.component';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
   ],
 })
 export class AuthenticationModule {}
