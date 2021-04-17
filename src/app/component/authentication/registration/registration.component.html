@@ -1,0 +1,58 @@
+<div class="login-container col-xs-12 col-sm-12">
+  <mat-card class="login-card col-10">
+    <mat-card-title class="text-center mt-3">Registration</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onRegister()" name="registerForm" [formGroup]="registerForm">
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label> <mat-icon>perm_identity</mat-icon> Name </mat-label>
+            <input formControlName="name" matInput placeholder="Enter your name" required />
+            <mat-error>Required Name</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label> <mat-icon> mobile_screen_share</mat-icon> Mobile Number </mat-label>
+            <input
+              formControlName="mobile"
+              matInput
+              placeholder="Enter mobile number"
+              ng-minLength="10"
+              ng-maxLength="10"
+              required
+            />
+            <mat-error>Required mobile number</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="email-input">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label> <mat-icon> email</mat-icon> Email </mat-label>
+            <input formControlName="email" matInput placeholder="Enter email address" required />
+            <mat-error *ngIf="!registerForm.controls['email'].valid">Required email address</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label><mat-icon> vpn_key</mat-icon> password </mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide Password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="!registerForm.controls['password'].valid">Required Password</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mb-2">
+          <button class="mr-3" mat-flat-button color="primary">Register</button>
+
+          <button class="ml-3" mat-flat-button color="primary" [routerLink]="['']">Cancel</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

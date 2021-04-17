@@ -10,9 +10,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegistrationComponent],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,

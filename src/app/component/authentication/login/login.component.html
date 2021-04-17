@@ -27,13 +27,13 @@
           </mat-form-field>
         </div>
         <div class="aLink mb-2">
-          <a class="text-link" routerLink="/auth/forgot-password">Forgot Password?</a>
+          <a class="text-link" routerLink="/authentication/registration">Forgot Password?</a>
         </div>
         <button mat-flat-button color="primary">Login</button>
       </form>
 
-      <div class="button-row">
-        <p class="mt-2">Create New Account</p>
+      <div class="aLink">
+        <a class="mt-2" [routerLink]="['/registration']">Create New Account</a>
       </div>
     </mat-card-content>
   </mat-card>
